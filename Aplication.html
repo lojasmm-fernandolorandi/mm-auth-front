@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMAuth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <section class="items-header">
+            <div class="subitems-header">
+                <span class="content-header">
+                    <p>Usuário logado: </p>
+                    <p>Larissa Manoela</p>
+                </span>
+                <div class="v-divider"></div>
+                <span class="content-header">
+                    <p>Hora atual: </p>
+                    <p>17/10/2024 19:06:34</p>
+                </span>
+            </div>
+            <button class="destructive-secondary-button button-md">Logout</button>
+        </section>
+    </header>
+
+    <main>
+        <aside id="sidebar" class="border">
+            <div class="header-sidebar">
+                    <span class="logo-header"></span>
+            </div>
+            <nav class="nav-sidebar">
+                <ul>
+                    <li>
+                        <svg id="icon-browsers" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Browsers">
+                                <path id="Vector" d="M13.5 2.5H4.5C4.23478 2.5 3.98043 2.60536 3.79289 2.79289C3.60536 2.98043 3.5 3.23478 3.5 3.5V4.5H2.5C2.23478 4.5 1.98043 4.60536 1.79289 4.79289C1.60536 4.98043 1.5 5.23478 1.5 5.5V12.5C1.5 12.7652 1.60536 13.0196 1.79289 13.2071C1.98043 13.3946 2.23478 13.5 2.5 13.5H11.5C11.7652 13.5 12.0196 13.3946 12.2071 13.2071C12.3946 13.0196 12.5 12.7652 12.5 12.5V11.5H13.5C13.7652 11.5 14.0196 11.3946 14.2071 11.2071C14.3946 11.0196 14.5 10.7652 14.5 10.5V3.5C14.5 3.23478 14.3946 2.98043 14.2071 2.79289C14.0196 2.60536 13.7652 2.5 13.5 2.5ZM11.5 5.5V6.5H2.5V5.5H11.5ZM13.5 10.5H12.5V5.5C12.5 5.23478 12.3946 4.98043 12.2071 4.79289C12.0196 4.60536 11.7652 4.5 11.5 4.5H4.5V3.5H13.5V10.5Z" fill="#CBD5E1"/>
+                            </g>
+                        </svg>
+                        <a href="#">Aplicações</a>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Password">
+                                <path id="Vector" d="M13.5 3H2.5C2.23478 3 1.98043 3.10536 1.79289 3.29289C1.60536 3.48043 1.5 3.73478 1.5 4V12C1.5 12.2652 1.60536 12.5196 1.79289 12.7071C1.98043 12.8946 2.23478 13 2.5 13H13.5C13.7652 13 14.0196 12.8946 14.2071 12.7071C14.3946 12.5196 14.5 12.2652 14.5 12V4C14.5 3.73478 14.3946 3.48043 14.2071 3.29289C14.0196 3.10536 13.7652 3 13.5 3ZM4 10.5C4 10.6326 3.94732 10.7598 3.85355 10.8536C3.75979 10.9473 3.63261 11 3.5 11C3.36739 11 3.24021 10.9473 3.14645 10.8536C3.05268 10.7598 3 10.6326 3 10.5V5.5C3 5.36739 3.05268 5.24021 3.14645 5.14645C3.24021 5.05268 3.36739 5 3.5 5C3.63261 5 3.75979 5.05268 3.85355 5.14645C3.94732 5.24021 4 5.36739 4 5.5V10.5ZM8.58125 8.01188L7.80875 8.26188L8.28625 8.91813C8.32487 8.97147 8.3526 9.03191 8.36786 9.09597C8.38312 9.16004 8.38561 9.22649 8.3752 9.29152C8.36478 9.35655 8.34165 9.41889 8.30714 9.47498C8.27263 9.53107 8.22741 9.57982 8.17406 9.61844C8.12071 9.65705 8.06028 9.68479 7.99621 9.70005C7.93215 9.71531 7.8657 9.7178 7.80067 9.70738C7.73564 9.69697 7.6733 9.67384 7.61721 9.63933C7.56111 9.60482 7.51237 9.5596 7.47375 9.50625L7 8.85063L6.52313 9.5075C6.44513 9.61524 6.32754 9.68759 6.1962 9.70863C6.06487 9.72967 5.93056 9.69768 5.82281 9.61969C5.71507 9.5417 5.64272 9.4241 5.62168 9.29277C5.60064 9.16143 5.63263 9.02712 5.71063 8.91938L6.18813 8.26313L5.41563 8.01313C5.35321 7.99261 5.29544 7.95999 5.24562 7.91715C5.19581 7.87431 5.15492 7.82207 5.12529 7.76342C5.06546 7.64498 5.05512 7.50762 5.09656 7.38156C5.11708 7.31914 5.14969 7.26138 5.19254 7.21156C5.23538 7.16175 5.28762 7.12086 5.34626 7.09123C5.4647 7.03139 5.60206 7.02106 5.72813 7.0625L6.5 7.3125V6.5C6.5 6.36739 6.55268 6.24021 6.64645 6.14645C6.74021 6.05268 6.86739 6 7 6C7.13261 6 7.25979 6.05268 7.35355 6.14645C7.44732 6.24021 7.5 6.36739 7.5 6.5V7.3125L8.27188 7.0625C8.33429 7.04198 8.40014 7.03396 8.46566 7.03889C8.53118 7.04382 8.59509 7.0616 8.65374 7.09123C8.71238 7.12086 8.76462 7.16175 8.80746 7.21156C8.85031 7.26138 8.88292 7.31914 8.90344 7.38156C8.92396 7.44398 8.93198 7.50983 8.92705 7.57535C8.92212 7.64087 8.90433 7.70478 8.87471 7.76342C8.84508 7.82207 8.80419 7.87431 8.75438 7.91715C8.70456 7.95999 8.64679 7.99261 8.58438 8.01313L8.58125 8.01188ZM13.0813 8.01188L12.3088 8.26188L12.7863 8.91813C12.8249 8.97147 12.8526 9.03191 12.8679 9.09597C12.8831 9.16004 12.8856 9.22649 12.8752 9.29152C12.8648 9.35655 12.8417 9.41889 12.8071 9.47498C12.7726 9.53107 12.7274 9.57982 12.6741 9.61844C12.6207 9.65705 12.5603 9.68479 12.4962 9.70005C12.4321 9.71531 12.3657 9.7178 12.3007 9.70738C12.2356 9.69697 12.1733 9.67384 12.1172 9.63933C12.0611 9.60482 12.0124 9.5596 11.9738 9.50625L11.5 8.85063L11.0231 9.5075C10.9451 9.61524 10.8275 9.68759 10.6962 9.70863C10.5649 9.72967 10.4306 9.69768 10.3228 9.61969C10.2151 9.5417 10.1427 9.4241 10.1217 9.29277C10.1006 9.16143 10.1326 9.02712 10.2106 8.91938L10.6881 8.26313L9.91562 8.01313C9.85321 7.99261 9.79544 7.95999 9.74562 7.91715C9.69581 7.87431 9.65492 7.82207 9.62529 7.76342C9.56546 7.64498 9.55512 7.50762 9.59656 7.38156C9.61708 7.31914 9.64969 7.26138 9.69254 7.21156C9.73538 7.16175 9.78762 7.12086 9.84626 7.09123C9.9647 7.03139 10.1021 7.02106 10.2281 7.0625L11 7.3125V6.5C11 6.36739 11.0527 6.24021 11.1464 6.14645C11.2402 6.05268 11.3674 6 11.5 6C11.6326 6 11.7598 6.05268 11.8536 6.14645C11.9473 6.24021 12 6.36739 12 6.5V7.3125L12.7719 7.0625C12.8343 7.04198 12.9001 7.03396 12.9657 7.03889C13.0312 7.04382 13.0951 7.0616 13.1537 7.09123C13.2124 7.12086 13.2646 7.16175 13.3075 7.21156C13.3503 7.26138 13.3829 7.31914 13.4034 7.38156C13.424 7.44398 13.432 7.50983 13.4271 7.57535C13.4221 7.64087 13.4043 7.70478 13.3747 7.76342C13.3451 7.82207 13.3042 7.87431 13.2544 7.91715C13.2046 7.95999 13.1468 7.99261 13.0844 8.01313L13.0813 8.01188Z" fill="#CBD5E1"/>
+                            </g>
+                        </svg>    
+                        <a href="#">Tokens</a>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Users">
+                                <path id="Vector" d="M10.2793 12.2269C10.3285 12.3023 10.3564 12.3896 10.3601 12.4796C10.3638 12.5696 10.3431 12.6589 10.3002 12.7381C10.2573 12.8173 10.1938 12.8835 10.1164 12.9296C10.039 12.9756 9.95066 13 9.86059 13H0.639343C0.549278 13 0.460888 12.9756 0.383512 12.9296C0.306136 12.8835 0.242647 12.8173 0.199752 12.7381C0.156858 12.6589 0.136151 12.5696 0.139819 12.4796C0.143488 12.3896 0.171395 12.3023 0.220593 12.2269C0.924409 11.1435 1.95965 10.3168 3.17184 9.87C2.50172 9.42386 1.99295 8.77392 1.72078 8.01628C1.44861 7.25863 1.42748 6.43351 1.66053 5.66293C1.89357 4.89235 2.36841 4.21723 3.01483 3.73739C3.66124 3.25755 4.44492 2.99847 5.24997 2.99847C6.05502 2.99847 6.83869 3.25755 7.48511 3.73739C8.13153 4.21723 8.60637 4.89235 8.83941 5.66293C9.07245 6.43351 9.05133 7.25863 8.77916 8.01628C8.50699 8.77392 7.99822 9.42386 7.32809 9.87C8.54029 10.3168 9.57553 11.1435 10.2793 12.2269ZM15.7737 12.2175C15.0697 11.1387 14.0368 10.3155 12.8281 9.87C13.6192 9.33709 14.1775 8.52275 14.3894 7.59271C14.6012 6.66268 14.4507 5.68686 13.9685 4.86389C13.4862 4.04091 12.7085 3.43264 11.7936 3.16289C10.8786 2.89313 9.89531 2.98217 9.04372 3.41187C9.01115 3.42868 8.98269 3.45245 8.96033 3.48149C8.93797 3.51053 8.92227 3.54413 8.91434 3.5799C8.90641 3.61568 8.90644 3.65277 8.91443 3.68854C8.92243 3.7243 8.93818 3.75787 8.96059 3.78687C9.59382 4.57675 9.95749 5.54865 9.99831 6.56019C10.0391 7.57174 9.75498 8.56978 9.18747 9.40812C9.15079 9.46291 9.13723 9.52997 9.14976 9.5947C9.16228 9.65943 9.19987 9.7166 9.25434 9.75375C9.99428 10.2702 10.6277 10.9244 11.12 11.6806C11.3185 11.9847 11.3996 12.3506 11.3481 12.71C11.3423 12.7458 11.3443 12.7823 11.3541 12.8172C11.3638 12.8521 11.381 12.8845 11.4045 12.9121C11.428 12.9396 11.4572 12.9618 11.4901 12.977C11.523 12.9922 11.5587 13 11.595 13H15.3637C15.4738 13 15.5808 12.9637 15.6682 12.8967C15.7556 12.8297 15.8184 12.7357 15.8468 12.6294C15.8642 12.5594 15.8667 12.4866 15.8541 12.4157C15.8415 12.3447 15.8141 12.2772 15.7737 12.2175Z" fill="#CBD5E1"/>
+                            </g>
+                        </svg>   
+                        <a href="#">Usuários</a>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="FileCode">
+                                <path id="Vector" d="M13.3538 5.14625L9.85375 1.64625C9.80728 1.59983 9.75212 1.56303 9.69143 1.53793C9.63073 1.51284 9.56568 1.49995 9.5 1.5H3.5C3.23478 1.5 2.98043 1.60536 2.79289 1.79289C2.60536 1.98043 2.5 2.23478 2.5 2.5V13.5C2.5 13.7652 2.60536 14.0196 2.79289 14.2071C2.98043 14.3946 3.23478 14.5 3.5 14.5H12.5C12.7652 14.5 13.0196 14.3946 13.2071 14.2071C13.3946 14.0196 13.5 13.7652 13.5 13.5V5.5C13.5001 5.43432 13.4872 5.36927 13.4621 5.30858C13.437 5.24788 13.4002 5.19272 13.3538 5.14625ZM6.85375 10.6462C6.90021 10.6927 6.93706 10.7479 6.9622 10.8086C6.98734 10.8692 7.00028 10.9343 7.00028 11C7.00028 11.0657 6.98734 11.1308 6.9622 11.1914C6.93706 11.2521 6.90021 11.3073 6.85375 11.3538C6.8073 11.4002 6.75214 11.4371 6.69145 11.4622C6.63075 11.4873 6.5657 11.5003 6.5 11.5003C6.4343 11.5003 6.36925 11.4873 6.30855 11.4622C6.24786 11.4371 6.1927 11.4002 6.14625 11.3538L4.64625 9.85375C4.59976 9.80731 4.56288 9.75217 4.53772 9.69147C4.51256 9.63077 4.49961 9.56571 4.49961 9.5C4.49961 9.43429 4.51256 9.36923 4.53772 9.30853C4.56288 9.24783 4.59976 9.19269 4.64625 9.14625L6.14625 7.64625C6.24007 7.55243 6.36732 7.49972 6.5 7.49972C6.63268 7.49972 6.75993 7.55243 6.85375 7.64625C6.94757 7.74007 7.00028 7.86732 7.00028 8C7.00028 8.13268 6.94757 8.25993 6.85375 8.35375L5.70687 9.5L6.85375 10.6462ZM11.3538 9.85375L9.85375 11.3538C9.75993 11.4476 9.63268 11.5003 9.5 11.5003C9.36732 11.5003 9.24007 11.4476 9.14625 11.3538C9.05243 11.2599 8.99972 11.1327 8.99972 11C8.99972 10.8673 9.05243 10.7401 9.14625 10.6462L10.2931 9.5L9.14625 8.35375C9.05243 8.25993 8.99972 8.13268 8.99972 8C8.99972 7.86732 9.05243 7.74007 9.14625 7.64625C9.24007 7.55243 9.36732 7.49972 9.5 7.49972C9.63268 7.49972 9.75993 7.55243 9.85375 7.64625L11.3538 9.14625C11.4002 9.19269 11.4371 9.24783 11.4623 9.30853C11.4874 9.36923 11.5004 9.43429 11.5004 9.5C11.5004 9.56571 11.4874 9.63077 11.4623 9.69147C11.4371 9.75217 11.4002 9.80731 11.3538 9.85375ZM9.5 5.5V2.75L12.25 5.5H9.5Z" fill="#CBD5E1"/>
+                            </g>
+                        </svg>
+                        <a href="#">Logs</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="container">
+            <div class="top-content">
+                <h3 class="app-name">Aplicações cadastradas</h3>
+                <div class="top-detail">
+                    <span>
+                        <input class="search-input" type="text" placeholder="Pesquisa rápida">
+                        <button class="button-md secondary-outline "> Pesquisa avançada</button>
+                    </span>
+                    <button id="new-app" class="button-md primary-filled ">Cadastrar nova aplicação</button>
+                </div>
+            </div>
+            <div class="alert">
+                <span class="detail-alert">
+                    <img src="/assets/icons/WarningCircle.svg" alt="Ícone de atenção laranja">
+                    <p>Existem Jobs na fila, verifique se a queue está ativa.</p>
+                    <button class="button-md tertiary-button">Clique para iniciar a queue</button>
+                </span>
+                <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert">
+            </div>
+            
+            <div class="box-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="id">ID</th>
+                            <th scope="col" class="data">Nome</th>
+                            <th scope="col" class="data">Descrição</th>
+                            <th scope="col" class="number">Ttl</th>
+                            <th scope="col" class="data">Endpoint</th>
+                            <th scope="col" class="number">T.A 
+                                <img src="/assets/icons/Info.svg" alt="Ícone de informação azul"> 
+                            </th>
+                            <th scope="col" class="status">Status</th>
+                            <th scope="col" class="actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="id">tabela</td>
+                            <td class="data">tabela</td>
+                            <td class="data">tabela</td>
+                            <td class="number">tabela</td>
+                            <td class="data">tabela</td>
+                            <td class="number">tabela</td>
+                            <td class="status"> 
+                                <span class="badge subtle-success">Ativa</span>
+                            </td>
+                            <td class="actions">
+                                <button class="button-sm primary-outline">Editar</button>
+                                <button class="button-sm secondary-outline">Editar</button>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td class="id">tabela</td>
+                            <td class="text-short">tabela</td>
+                            <td class="text-short">tabela</td>
+                            <td class="number">tabela</td>
+                            <td class="text-short">tabela</td>
+                            <td class="number">tabela</td>
+                            <td class="status">
+                                <span class="badge subtle-error">Inativa</span>
+                            </td>
+                            <td class="actions"> 
+                                <button class="button-sm primary-outline">Editar</button>
+                                <button class="button-sm secondary-outline">Editar</button>
+                             </td>
+                        </tr>
+                    </tbody> 
+                </table>                
+            </div>
+
+            <div id="modal">
+                <div class="modal-content">
+                    <div class="header-modal">
+                        <span>
+                            <h4 class="title">Nova aplicação</h4>
+                            <p class="description">Preencha os campos abaixo para cadastrar uma nova aplicação</p>
+                        </span>
+                        <span id="close-modal" class="close">
+                            <img src="/assets/icons/X.svg" alt="">
+                        </span>
+                    </div>
+                    <div class="tabs-modal">
+                        <button data-id="infos" class="tab-link active">Informações gerais</button>
+                        <button data-id="custom" class="tab-link">Customização</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                        <div id="infos" class="tab-content active">
+                            <div class="input-group">
+                                <label class="label-input" for="name">Nome</label>
+                                <input class="input-text" id="name" type="text" placeholder="Digite o nome da aplicação">
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="description">Descrição</label>
+                                <input class="input-text" id="description" type="text" placeholder="Insira uma descrição breve">
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="token">Token</label>
+                                <input class="input-text" id="token" type="text" placeholder="Informe um token válido">
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="endpoint">Endpoint</label>
+                                <input class="input-text" id="endpoint" type="text" placeholder="Digite a URL">
+                            </div>
+                            <div  class="input-group">
+                                <label class="label-input" for="callback">URL de callback</label>
+                                <input class="input-text" id="callback" type="text">
+                                <span class="input-description">
+                                    <img src="/assets/icons/Info.svg" alt="">
+                                    <p>Padrão após a autenticação</p>
+                                </span> 
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="name">TTL</label>
+                                <input class="input-text" id="name" type="text" placeholder="Informe um valor de TTL">
+                                <span class="input-description">
+                                    <img src="/assets/icons/Info.svg" alt="">
+                                    <p>Tempo de vida do token em minutos</p>
+                                </span> 
+                            </div>
+                        </div>
+
+                        <div id="custom" class="tab-content">
+                            <div class="input-group">
+                                <span class="label-input">Background</span>
+                                <div class="input-wrapper">
+                                    <label for="input-file" id="file-name">Escolha o arquivo desejado</label>
+                                    <label for="input-file">Procurar arquivo</label>
+                                    <input id="input-file" type="file" value="" />
+                                </div>
+                                <span class="input-description">
+                                    <img src="/assets/icons/Info.svg" alt="">
+                                    <p>Tamanho recomendado: 1440 x 1280</p>
+                                </span> 
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="color-picker">Selecione a cor primaria</label>
+                                <div id="input-color">
+                                    <input id="color-picker" type="color" value="#ffffff">
+                                    <span id="color-name">Nenhuma cor selecionada</span>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="name">Mensagem de boas vindas</label>
+                                <textarea class="input-text-area" id="name" type="text" placeholder="Digite aqui sua mensagem" rows="4"></textarea>
+                                <span class="input-description">
+                                    <img src="/assets/icons/Info.svg" alt="">
+                                    <p>Mínimo de 60 caracteres</p>
+                                </span> 
+                            </div>
+                        </div>
+                    </div>
+                        <span class="footer-modal"> 
+                            <button class="button-md secondary-outline">Cancelar</button>
+                            <button class="button-md primary-filled">Salvar</button>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let modal = document.getElementById("modal");
+        let triggerModal = document.getElementById("new-app");
+        let close = document.getElementById("close-modal");
+
+        // Abrir o modal
+        triggerModal.onclick = function() {
+            modal.style.display = 'block';
+            const tabNavigation = TabNavigation();
+            tabNavigation.init();
+        };
+
+        // Fechar o modal
+        close.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        const html = {
+            tabModal: [...document.querySelectorAll('.tabs-modal .tab-link')], // Seleciona as abas
+            bodyModal: [...document.querySelectorAll('.modal-body .tab-content')], // Seleciona o conteúdo das abas
+        };
+
+        function TabNavigation() {
+            // Remove as classes "active" de todas as abas e conteúdos
+            function removeAllActiveClass() {
+                html.tabModal.forEach(tab => tab.classList.remove('active'));
+                html.bodyModal.forEach(content => content.classList.remove('active'));
+            }
+
+            // Exibe a aba atual
+            function showCurrentTab(id) {
+                removeAllActiveClass(); // Remove classes anteriores
+                const currentTab = document.querySelector(`.tab-link[data-id="${id}"]`);
+                const currentContent = document.getElementById(id);
+
+                if (currentTab && currentContent) {
+                    currentTab.classList.add('active'); // Ativa a aba atual
+                    currentContent.classList.add('active'); // Ativa o conteúdo da aba atual
+                }
+            }
+
+            // Função para lidar com o clique nas abas
+            function selectTab(event) {
+                const id = event.currentTarget.dataset.id;
+                showCurrentTab(id); // Exibe o conteúdo da aba clicada
+            }
+
+            // Adiciona o listener para cada aba
+            function listenForChange() {
+                html.tabModal.forEach(tab => {
+                    tab.addEventListener('click', selectTab);
+                });
+            }
+
+            // Inicializa o TabNavigation
+            function init() {
+                listenForChange(); // Ativa o listener das abas
+                if (html.tabModal.length > 0) {
+                    showCurrentTab(html.tabModal[0].dataset.id); // Mostra a primeira aba por padrão
+                }
+            }
+
+            return { init };
+        }
+
+        // Upload de arquivo
+        let input = document.getElementById("input-file");
+        let filename = document.getElementById("file-name")
+
+        input.addEventListener('change', function (){
+            filename.textContent = this.value
+            filename.style.color = "var(--text-color-primary)"
+        })
+
+        // Color Picker
+        let colorPicker = document.getElementById("color-picker");
+        let labelColorPicker = document.getElementById("color-name")
+
+        colorPicker.addEventListener('change', function (){
+            labelColorPicker.textContent = this.value
+            labelColorPicker.style.color = "var(--text-color-primary)"
+        })
+
+    </script>
+ 
+</body>
+</html>
+
