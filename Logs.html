@@ -26,7 +26,7 @@
                     <p>17/10/2024 19:06:34</p>
                 </span>
             </div>
-            <button class="destructive-secondary-button button-md">Logout</button>
+            <button class="destructive-secondary button-md">Logout</button>
         </section>
     </header>
 
@@ -83,13 +83,13 @@
                     </span>
                 </div>
             </div>
-            <div class="alert">
+            <div id="alert" class="alert">
                 <span class="detail-alert">
                     <img src="/assets/icons/WarningCircle.svg" alt="Ícone de atenção laranja">
                     <p>Existem Jobs na fila, verifique se a queue está ativa.</p>
                     <button class="button-md tertiary-button">Clique para iniciar a queue</button>
                 </span>
-                <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert">
+                <button id="close-alert" class="button-icon"> <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert"></button>
             </div>
             
             <div class="box-table">
@@ -159,7 +159,8 @@
                              </td>
                         </tr>
                     </tbody> 
-                </table>                
+                </table>
+                <p class="table-legend">Exibindo registros do 1 até o 10 de um total de 19.2281</p>                
             </div>
 
             <div id="modal">
@@ -176,16 +177,30 @@
                     <div class="model-body">
                         <div class="status-modal">
                             <span class="badge filled-alert">Alerta</span>
-                            <span class="url-container">
-                                <p>api/auth/check</p>
-                                <p>(172.29.2.235)</p>
-                            </span>
+                            <div class="detail-status">
+                                <span class="url-container">
+                                    <p>api/auth/check</p>
+                                    <p>(172.29.2.235)</p>
+                                </span>
+                                <span class="data-modal">
+                                    <p>Data da ocorrência: </p>
+                                    <p>17/10/2024 19:03:01 </p>
+                                </span>
+                            </div>
+                            
+                            
                         </div>
 
                         <div class="modal-group">
                             <label class="label-input" for="mensagem-container">Mensagem</label>
                             <span class="mensagem-container">
                                 <p>203 - hostname enviado () diferente do registrado (1078731876) para o token verificado: #5979874</p>
+                            </span>
+                        </div>
+                        <div class="modal-group">
+                            <label class="label-input" for="context-container">Context</label>
+                            <span id="context-container" class="mensagem-container">
+                                <p id="value-context" class="detail-context">{"fields":{"token":"TheWinnerAintTheOneWithTheFastestCarItsTheOneWhoRefusesToLose", "hostname":null}}</p>
                             </span>
                         </div>
                     </div>
@@ -196,12 +211,35 @@
     </main>
 
     <script>
+        let context = document.getElementById("context-container")
+        let jsonContext = document.getElementById("value-context").textContent
+
+        function formatarJson(content) {
+                try {
+                    let obj = JSON.parse(content);
+                    let pretty = JSON.stringify(obj, undefined, 2);
+                    return pretty;
+                } catch (error) {
+                    console.error("Erro ao formatar JSON", error);
+                    return content;
+                }
+        }
+
+        let closeAlert = document.getElementById("close-alert")
+        let alert = document.getElementById("alert")
+        closeAlert.onclick = function() {
+            alert.style.display = 'none';
+        } 
+
         let modal = document.getElementById("modal")
         let button = document.getElementById("detail")
         let close = document.getElementById("close-modal")
 
         button.onclick = function(){
             modal.style.display = 'block';
+            let formattedJson = formatarJson(jsonContext)
+            context.textContent = formattedJson  
+            context.classList.add('detail-context')
         };
 
         close.onclick = function(){

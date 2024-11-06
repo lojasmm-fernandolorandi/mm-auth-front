@@ -1,7 +1,7 @@
 :root {
     font-family: 'Inter', sans-serif;
     --font-primary:'Inter', sans-serif;
-    --font-secondary: 'Georgia', serif;
+    --font-secondary: monospace;
 
     /* Slate */
     --slate-50:  hsl(210, 40%, 98%);

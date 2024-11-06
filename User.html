@@ -26,7 +26,7 @@
                     <p>17/10/2024 19:06:34</p>
                 </span>
             </div>
-            <button class="destructive-secondary-button button-md">Logout</button>
+            <button class="destructive-secondary button-md">Logout</button>
         </section>
     </header>
 
@@ -84,13 +84,13 @@
                     <button id="new-app" class="button-md primary-filled ">Cadastrar novo usuário</button>
                 </div>
             </div>
-            <div class="alert">
+            <div id="alert" class="alert">
                 <span class="detail-alert">
                     <img src="/assets/icons/WarningCircle.svg" alt="Ícone de atenção laranja">
                     <p>Existem Jobs na fila, verifique se a queue está ativa.</p>
                     <button class="button-md tertiary-button">Clique para iniciar a queue</button>
                 </span>
-                <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert">
+                <button id="close-alert" class="button-icon"> <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert"></button>
             </div>
             
             <div class="box-table">
@@ -101,7 +101,6 @@
                             <th scope="col" class="data">Nome</th>
                             <th scope="col" class="data">E-mail</th>
                             <th scope="col" class="data">CPF/CNPJ</th>
-                            
                             <th scope="col" class="number">T.A 
                                 <img src="/assets/icons/Info.svg" alt="Ícone de informação azul"> 
                             </th>
@@ -112,7 +111,7 @@
                     <tbody>
                         <tr>
                             <td class="id">1234890</td>
-                            <td class="data">Thiago Rafael Ribeiro</td>
+                            <td class="text-short">Thiago Rafael Ribeiro</td>
                             <td class="email">michelle.rivera@example.com.br</td>
                             <td class="text-short">123456.789-10</td>
                             <td class="number">60</td>
@@ -122,10 +121,13 @@
                              </td>
                         </tr>
                     </tbody> 
-                </table>                
+                </table>
+                <p class="table-legend">Exibindo registros do 1 até o 10 de um total de 19.2281</p>                
             </div>
 
-            <div id="modal">
+            
+            <!-- Primary modal -->
+            <div style="display: none;">
                 <div class="modal-content">
                     <div class="header-modal">
                         <span>
@@ -162,10 +164,82 @@
                     </form>
                 </div>
             </div>
+
+
+            <!-- Action modal -->
+            <div id="modal">
+                <div class="modal-content">
+                    <div class="header-modal">
+                        <span>
+                            <h4 class="title">Editar TTL</h4>
+                            <p class="description">Altere o tempo de vida do token por aplicação</p>
+                        </span>
+                        <span id="close-modal" class="close">
+                            <img src="/assets/icons/X.svg" alt="">
+                        </span>
+                    </div>
+                    <div class="modal-body">
+                        <form onsubmit="handleOnSubmit(event)">
+                            <div class="container-autocomplete">
+                                <label class="label-input" for="user">Aplicação</label>
+                                <input class="autocomplete icon" id="autocomplete" type="text" placeholder="Selecione a aplicação">
+                                <ul class="lista-autocomplete">
+                                </ul>
+                            </div>
+                            <div class="input-group">
+                                <label class="label-input" for="e-mail">TTL</label>
+                                <div class="group-input-button">
+                                    <input class="input-text" id="token-time" type="text" placeholder="Informe o TTL">
+                                    <button type="submit" class="button-md primary-filled">Incluir TTL</button>
+                                </div>
+                                <span class="input-description">
+                                    <img src="/assets/icons/Info.svg" alt="">
+                                    <p>Tempo de vida do token em minutos</p>
+                                </span> 
+                            </div>
+                            <span class="h-divider">
+                                <p class="detail-divider">Permissões incluídas</p>
+                                <span class="h-divider"></span>
+                            </span>
+                        </form>
+                        <div class="box-table">
+                            <table id="token-table">
+                                <thead id="token-head">
+                                    <tr>
+                                        <th scope="col" class="data">Aplicação</th>
+                                        <th scope="col" class="number">T.A 
+                                            <img src="/assets/icons/Info.svg" alt="Ícone de informação azul"> 
+                                        </th>
+                                        <th scope="col" class="actions">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="token-list">
+                                    <tr>
+                                        <td class="text-short">MMAuth - Microsserviço de autenticação</td>
+                                        <td class="number">60</td>
+                                        <td class="actions">
+                                            <button class="button-sm destructive-primary">Excluir</button>
+                                        </td>
+                                    </tr>
+                                </tbody> 
+                            </table>        
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
         </section>
     </main>
 
     <script>
+        
+        let closeAlert = document.getElementById("close-alert")
+        let alert = document.getElementById("alert")
+        closeAlert.onclick = function() {
+            alert.style.display = 'none';
+        } 
+
         let modal = document.getElementById("modal")
         let button = document.getElementById("new-app")
         let close = document.getElementById("close-modal")
@@ -197,6 +271,106 @@
                     jsonOutput.style.backgroundColor = "var(--red-50)"
                 }
         }
+
+        const arrayNomes = [
+        "Andrés Iniesta",
+        "Andréia Iniesta",   
+        "Bobby Charlton",   
+        "Cristiano Ronaldo",
+        ]
+        
+        const nomesOrdenados = arrayNomes.sort();
+        const autocomplete = document.getElementById("autocomplete");
+        const lista = document.querySelector(".lista-autocomplete");
+
+        function listaDropDown(valor) {
+            lista.innerHTML = ""; 
+
+            nomesOrdenados.forEach((nome) => {
+                if (nome.toLowerCase().startsWith(valor.toLowerCase())) {
+                    const itemLista = document.createElement("li");
+                    itemLista.classList.add("item-lista");
+
+                    let nomeAtualizado = "<b>" + nome.substr(0, valor.length) + "</b>";
+                    nomeAtualizado += nome.substr(valor.length);
+                    itemLista.innerHTML = nomeAtualizado;
+
+                    itemLista.setAttribute("onclick", "adicionarNome('" + nome + "')");
+                    lista.appendChild(itemLista);
+                }
+            });
+
+            lista.style.display = lista.children.length > 0 ? "block" : "none";
+        }
+
+        autocomplete.addEventListener("keyup", () => {
+            const valor = autocomplete.value;
+            listaDropDown(valor);
+        });
+
+        autocomplete.addEventListener("click", () => {
+            listaDropDown(""); 
+        });
+
+        function adicionarNome(nome) {
+            autocomplete.value = nome;
+            limparLista();
+        }
+
+        function limparLista() {
+            lista.innerHTML = ""; 
+            lista.style.display = "none"; 
+        }
+
+        document.addEventListener("click", (event) => {
+            const isClickInside = autocomplete.contains(event.target) || lista.contains(event.target);
+
+            if (!isClickInside) {
+                limparLista(); 
+            }
+        });
+
+        // Função para criar e configurar elementos com classe e conteúdo
+        function createElementWithClass(tag, className, innerHTML = "") {
+            const element = document.createElement(tag);
+            element.className = className;
+            element.innerHTML = innerHTML;
+            return element;
+        }
+
+        function createTokenList() {
+            const tokenTime = document.getElementById("token-time").value;
+            const autocomplete = document.getElementById("autocomplete").value;
+
+            // Criação e configuração das células
+            const nameAplication = createElementWithClass('td', 'text-short', autocomplete);
+            const ttl = createElementWithClass('td', 'number', tokenTime);
+            const action = createElementWithClass('td', 'actions');
+
+            // Criação e configuração do botão de exclusão
+            const button = createElementWithClass('button', 'button-sm destructive-primary', 'Excluir');
+
+            button.onclick = function(){
+                row.remove()
+            }
+           
+            // Montagem da linha da tabela
+            action.appendChild(button);
+            const row = document.createElement('tr');
+            row.append(nameAplication, ttl, action);
+
+            // Adiciona a linha à tabela
+            document.getElementById("token-list").append(row);
+        }
+
+        // Função de submissão de formulário
+        function handleOnSubmit(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            createTokenList();
+        }
+
+
+
     </script>
     
 </body>

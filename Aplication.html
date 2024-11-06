@@ -26,7 +26,7 @@
                     <p>17/10/2024 19:06:34</p>
                 </span>
             </div>
-            <button class="destructive-secondary-button button-md">Logout</button>
+            <button class="destructive-secondary button-md">Logout</button>
         </section>
     </header>
 
@@ -84,13 +84,13 @@
                     <button id="new-app" class="button-md primary-filled ">Cadastrar nova aplicação</button>
                 </div>
             </div>
-            <div class="alert">
+            <div id="alert" class="alert">
                 <span class="detail-alert">
                     <img src="/assets/icons/WarningCircle.svg" alt="Ícone de atenção laranja">
                     <p>Existem Jobs na fila, verifique se a queue está ativa.</p>
                     <button class="button-md tertiary-button">Clique para iniciar a queue</button>
                 </span>
-                <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert">
+                <button id="close-alert" class="button-icon"> <img src="/assets/icons/X.svg" alt="Ícone de X para fechar o alert"></button>
             </div>
             
             <div class="box-table">
@@ -110,38 +110,40 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr>
-                            <td class="id">tabela</td>
-                            <td class="data">tabela</td>
-                            <td class="data">tabela</td>
-                            <td class="number">tabela</td>
-                            <td class="data">tabela</td>
-                            <td class="number">tabela</td>
-                            <td class="status"> 
+                            <td class="id">8173</td>
+                            <td class="text-short">Cadastro de cliente</td>
+                            <td class="text-short">Portal de cadastro do cliente</td>
+                            <td class="number">60</td>
+                            <td class="text-short">https://cadastro.lojasmm.com.br/_callback/mmauth/invalidate-token</td>
+                            <td class="number">75</td>
+                            <td class="status">
                                 <span class="badge subtle-success">Ativa</span>
                             </td>
-                            <td class="actions">
+                            <td class="actions"> 
                                 <button class="button-sm primary-outline">Editar</button>
-                                <button class="button-sm secondary-outline">Editar</button>
+                                <button class="button-sm destructive-secondary">Sair</button>
                              </td>
                         </tr>
                         <tr>
-                            <td class="id">tabela</td>
-                            <td class="text-short">tabela</td>
-                            <td class="text-short">tabela</td>
-                            <td class="number">tabela</td>
-                            <td class="text-short">tabela</td>
-                            <td class="number">tabela</td>
+                            <td class="id">8173</td>
+                            <td class="text-short">Cadastro de cliente</td>
+                            <td class="text-short">Portal de cadastro do cliente</td>
+                            <td class="number">60</td>
+                            <td class="text-short">https://cadastro.lojasmm.com.br/_callback/mmauth/invalidate-token</td>
+                            <td class="number">75</td>
                             <td class="status">
                                 <span class="badge subtle-error">Inativa</span>
                             </td>
                             <td class="actions"> 
                                 <button class="button-sm primary-outline">Editar</button>
-                                <button class="button-sm secondary-outline">Editar</button>
+                                <button class="button-sm destructive-secondary">Sair</button>
                              </td>
                         </tr>
                     </tbody> 
-                </table>                
+                </table>
+                <p class="table-legend">Exibindo registros do 1 até o 10 de um total de 19.2281</p>                
             </div>
 
             <div id="modal">
@@ -238,6 +240,12 @@
     </main>
 
     <script>
+        let closeAlert = document.getElementById("close-alert")
+        let alert = document.getElementById("alert")
+        closeAlert.onclick = function() {
+            alert.style.display = 'none';
+        }
+
         let modal = document.getElementById("modal");
         let triggerModal = document.getElementById("new-app");
         let close = document.getElementById("close-modal");
